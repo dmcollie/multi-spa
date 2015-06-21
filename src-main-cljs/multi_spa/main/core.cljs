@@ -1,4 +1,4 @@
-(ns multi-spa.core
+(ns multi-spa.main.core
   (:require [reagent.core :as reagent :refer [atom]]
             [reagent.session :as session]
             [secretary.core :as secretary :include-macros true]
@@ -12,7 +12,7 @@
   [:div.navbar.navbar-inverse.navbar-fixed-top
    [:div.container
     [:div.navbar-header
-     [:a.navbar-brand {:href "#/"} "myapp"]]
+     [:a.navbar-brand {:href "#/"} "MAIN"]]
     [:div.navbar-collapse.collapse
      [:ul.nav.navbar-nav
       [:li {:class (when (= :home (session/get :page)) "active")}

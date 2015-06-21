@@ -54,14 +54,22 @@
   
   :cljsbuild
   {:builds
-   {:app
-    {:source-paths ["src-cljs"]
+   {:main-app
+    {:source-paths ["src-main-cljs"]
      :compiler
-     {:output-dir "resources/public/js/out"
+     {:output-dir "resources/public/js/main-app/out"
       :externs ["react/externs/react.js"]
       :optimizations :none
-      :output-to "resources/public/js/app.js"
-      :pretty-print true}}}}
+      :output-to "resources/public/js/main-app.js"
+      :pretty-print true}}
+    :admin-app
+    {:source-paths ["src-admin-cljs"]
+     :compiler
+                   {:output-dir "resources/public/js/admin-app/out"
+                    :externs ["react/externs/react.js"]
+                    :optimizations :none
+                    :output-to "resources/public/js/admin-app.js"
+                    :pretty-print true}}}}
   
   
   :profiles
@@ -84,8 +92,10 @@
          :plugins [[lein-figwheel "0.3.3"]]
           :cljsbuild
           {:builds
-           {:app
-            {:source-paths ["env/dev/cljs"] :compiler {:source-map true}}}} 
+           {:main-app
+            {:source-paths ["src-main-cljs" "env/dev/cljs/main"] :compiler {:source-map true}}
+            :admin-app
+            {:source-paths ["src-admin-cljs" "env/dev/cljs/admin"] :compiler {:source-map true}}}}
          
          :figwheel
          {:http-server-root "public"
