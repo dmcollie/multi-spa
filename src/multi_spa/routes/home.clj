@@ -4,10 +4,14 @@
             [ring.util.http-response :refer [ok]]
             [clojure.java.io :as io]))
 
-(defn home-page []
-  (layout/render "home.html"))
+(defn main-page []
+  (layout/render "main.html"))
+
+(defn admin-page []
+  (layout/render "admin.html"))
 
 (defroutes home-routes
-  (GET "/" [] (home-page))
+  (GET "/main" [] (main-page))
+  (GET "/admin" [] (admin-page))
   (GET "/docs" [] (ok (-> "docs/docs.md" io/resource slurp))))
 
