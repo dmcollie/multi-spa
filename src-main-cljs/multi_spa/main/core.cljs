@@ -16,9 +16,9 @@
     [:div.navbar-collapse.collapse
      [:ul.nav.navbar-nav
       [:li {:class (when (= :home (session/get :page)) "active")}
-       [:a {:href "#/"} "Home"]]
+       [:a {:href "#/"} "Main Home"]]
       [:li {:class (when (= :about (session/get :page)) "active")}
-       [:a {:href "#/about"} "About"]]]]]])
+       [:a {:href "#/about"} "Main About"]]]]]])
 
 (defn about-page []
   [:div "this is the story of multi-spa... work in progress"])
