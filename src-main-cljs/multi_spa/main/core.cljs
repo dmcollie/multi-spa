@@ -18,7 +18,9 @@
       [:li {:class (when (= :home (session/get :page)) "active")}
        [:a {:href "#/"} "Main Home"]]
       [:li {:class (when (= :about (session/get :page)) "active")}
-       [:a {:href "#/about"} "Main About"]]]]]])
+       [:a {:href "#/about"} "Main About"]]
+      [:li {:class (when (= :about (session/get :page)) "active")}
+       [:a {:href "admin"} "Admin App"]]]]]])
 
 (defn about-page []
   [:div "this is the story of multi-spa... work in progress"])
@@ -26,7 +28,7 @@
 (defn home-page []
   [:div.container
    [:div.jumbotron
-    [:h1 "Welcome to multi-spa"]
+    [:h1 "Welcome to multi-spa Main App"]
     [:p "Time to start building your site!"]
     [:p [:a.btn.btn-primary.btn-lg {:href "http://luminusweb.net"} "Learn more »"]]]
    [:div.row

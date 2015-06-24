@@ -25,6 +25,7 @@
                            [reagent-forms "0.5.1"]
                            [reagent-utils "0.1.4"]
                            [secretary "1.2.3"]
+                           [aprint "0.1.3"]
                            [org.clojure/core.async "0.1.346.0-17112a-alpha"]
                            [cljs-ajax "0.3.13"]]
 
@@ -52,6 +53,7 @@
 
             :clean-targets ^{:protect false} ["resources/public/js"]
 
+            :hooks       [leiningen.cljsbuild]
             :cljsbuild
             {:builds
              {:main-app
@@ -75,7 +77,6 @@
             :profiles
             {:uberjar {:omit-source true
                        :env         {:production true}
-                       :hooks       [leiningen.cljsbuild]
                        :cljsbuild
                                     {:jar true
                                      :builds

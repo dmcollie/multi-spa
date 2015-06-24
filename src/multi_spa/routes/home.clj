@@ -11,7 +11,7 @@
   (layout/render "admin.html"))
 
 (defroutes home-routes
-  (GET "/main" [] (main-page))
+  (GET "/" [] (main-page))
   (GET "/admin" [] (admin-page))
   (GET "/docs" [] (ok (-> "docs/docs.md" io/resource slurp))))
 
